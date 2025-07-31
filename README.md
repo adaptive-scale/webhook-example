@@ -51,7 +51,7 @@ make start
 ### Using Docker
 
 ```bash
-docker run -p 8080:8080 -e SHARED_SECRET=your-secret <registry>/siemwebhook:latest
+docker run -p 8080:8080 -e SHARED_SECRET=your-secret <registry>/webhook-example:latest
 ```
 
 ## Configuration
