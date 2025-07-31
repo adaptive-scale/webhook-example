@@ -48,12 +48,6 @@ make start
 
 3. The server will start on port 8080 by default.
 
-### Using Docker
-
-```bash
-docker run -p 8080:8080 -e SHARED_SECRET=your-secret <registry>/webhook-example:latest
-```
-
 ## Configuration
 
 The application is configured via environment variables:
@@ -117,40 +111,6 @@ export MAX_AGE=30
 ```bash
 go build -o webhook-example ./cmd/main.go
 ```
-
-### Using Makefile
-```bash
-make build-siem-webhook
-```
-
-This will build the binary for linux/amd64 as `webhook-example`.
-
-## Deployment
-
-### Docker Compose
-```yaml
-version: '3.8'
-services:
-  webhook-example:
-    image: <registry>/siemwebhook:latest
-    ports:
-      - "8080:8080"
-    environment:
-      - SHARED_SECRET=your-shared-secret
-      - OUTPUT_TYPE=file
-      - FILE_LOCATION=/app/logs/webhook.log
-      - FORMATTER=json
-    volumes:
-      - ./logs:/app/logs
-```
-
-### Kubernetes
-Apply the provided Kubernetes deployment:
-```bash
-kubectl apply -f deployment.yaml
-```
-
-Make sure to update the `SHARED_SECRET` in the deployment file before applying.
 
 ## Log Rotation
 
