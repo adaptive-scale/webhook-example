@@ -164,15 +164,3 @@ You can test the webhook server using the provided curl examples or any HTTP cli
    ```bash
    curl http://localhost:8080/healthz
    ```
-
-## License
-
-This project is part of the Adaptive Scale ecosystem.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
